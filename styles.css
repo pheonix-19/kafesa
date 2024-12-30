@@ -1,0 +1,31 @@
+/* General styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #000000;
+    color: #000000;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #ffffff;
+}
+
+/* Container for the PDF pages */
+#pdf-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Styling for each rendered PDF page */
+canvas {
+    display: block;
+    width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px auto;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
