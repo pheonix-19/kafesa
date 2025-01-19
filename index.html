@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Day Kafesa Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-gray-800 font-semibold text-base">
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-4xl font-bold text-center mb-4">Game Day Kafesa</h1>
+        
+        <!-- <div class="mt-8 flex space-x-4">
+            <input type="text" id="name" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your name">
+            <input type="tel" id="phone" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your phone number">
+            <input type="number" id="table" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your table number">
+        </div> -->
+
+        <div class="mt-8">
+            <input type="text" id="name" class="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your name">
+            <input type="tel" id="phone" class="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your phone number">
+            <select title="table" id="table" class="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="" disabled selected>Select your table number</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+        </div>
+        <br/>
+        <h1 class="text-4xl font-bold text-center mb-4">MENU</h1>
+        <div class="mb-[24px]">  
+            <h3 class="text-xl font-semibold mb-4">Drinks and Shakes</h3>
+            <div class="grid gap-4">
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Plain Lassi - ₹79</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Plain Lassi" data-price="79">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Plain Lassi" data-price="79">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Strawberry Shake - ₹89</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Strawberry Shake" data-price="89">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Strawberry Shake" data-price="89">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Chocolate Shake - ₹89</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Chocolate Shake" data-price="89">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Chocolate Shake" data-price="89">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Oreo Shake - ₹89</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Oreo Shake" data-price="89">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Oreo Shake" data-price="89">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Kit Kat Shake - ₹89</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Kit Kat Shake" data-price="89">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Kit Kat Shake" data-price="89">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Banana Shake - ₹89</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Banana Shake" data-price="89">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Banana Shake" data-price="89">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Lemon Soda - ₹99</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Lemon Soda" data-price="99">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Lemon Soda" data-price="99">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Virgin Mojito - ₹99</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Virgin Mojito" data-price="99">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Virgin Mojito" data-price="99">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Black Current - ₹99</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Black Current" data-price="99">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Black Current" data-price="99">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Strawberry Shake with Ice Cream - ₹99</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Strawberry Shake" data-price="89">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Strawberry Shake" data-price="89">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Chocolate Shake with Ice Cream- ₹99</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Chocolate Shake" data-price="89">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Chocolate Shake" data-price="89">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Oreo Shake with Ice Cream - ₹99</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Oreo Shake" data-price="89">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Oreo Shake" data-price="89">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Kit Kat Shake with Ice Cream - ₹99</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Kit Kat Shake" data-price="89">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Kit Kat Shake" data-price="89">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Banana Shake with Ice Cream - ₹99</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Banana Shake" data-price="89">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Banana Shake" data-price="89">+</button>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <h3 class="text-xl font-semibold mb-4">Hot Beverages</h3>
+            <div class="grid gap-4">
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Chai - ₹35</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Chai" data-price="35">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Chai" data-price="35">+</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                    <span>Hot Coffee - ₹45</span>
+                    <div class="flex items-center">
+                        <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Hot Coffee" data-price="45">-</button>
+                        <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Hot Coffee" data-price="45">+</button>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <h3 class="text-xl font-semibold mb-4">Cold Beverages</h3>
+                <div class="grid gap-4">
+                    <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                        <span>Cold Coffee - ₹89</span>
+                        <div class="flex items-center">
+                            <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Cold Coffee" data-price="89">-</button>
+                            <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Cold Coffee" data-price="89">+</button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                        <span>Cold Coffee with Ice Cream - ₹99</span>
+                        <div class="flex items-center">
+                            <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Cold Coffee with Ice Cream" data-price="99">-</button>
+                            <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Cold Coffee with Ice Cream" data-price="99">+</button>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <!-- <h3 class="text-xl font-semibold mb-4">Soft Drinks</h3>
+                <div class="grid gap-4">
+                    <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                        <span>Coke - ₹50</span>
+                        <div class="flex items-center">
+                            <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Coke" data-price="50">-</button>
+                            <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Coke" data-price="50">+</button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                        <span>Sprite - ₹50</span>
+                        <div class="flex items-center">
+                            <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Sprite" data-price="50">-</button>
+                            <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Sprite" data-price="50">+</button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                        <span>Pepsi - ₹50</span>
+                        <div class="flex items-center">
+                            <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Pepsi" data-price="50">-</button>
+                            <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Pepsi" data-price="50">+</button>
+                        </div>
+                    </div>
+                </div> -->
+                <br/>
+                <h3 class="text-xl font-semibold mb-4">Rolls</h3>
+                <div class="grid gap-4">
+                    <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                        <span>Veg Roll - ₹59</span>
+                        <div class="flex items-center">
+                            <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Veg Roll" data-price="59">-</button>
+                            <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Veg Roll" data-price="59">+</button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                        <span>Paneer Roll - ₹89</span>
+                        <div class="flex items-center">
+                            <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Roll" data-price="89">-</button>
+                            <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Roll" data-price="89">+</button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                        <span>Paneer Spring Roll - ₹99</span>
+                        <div class="flex items-center">
+                            <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Spring Roll" data-price="99">-</button>
+                            <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Spring Roll" data-price="99">+</button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                        <span>Veg Spring Roll - ₹119</span>
+                        <div class="flex items-center">
+                            <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Veg Spring Roll" data-price="119">-</button>
+                            <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Veg Spring Roll" data-price="119">+</button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                        <span>Cheese Spring Roll - ₹129</span>
+                        <div class="flex items-center">
+                            <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Cheese Spring Roll" data-price="129">-</button>
+                            <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Cheese Spring Roll" data-price="129">+</button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                        <span>Paneer Tikka Roll - ₹129</span>
+                        <div class="flex items-center">
+                            <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Tikka Roll" data-price="129">-</button>
+                            <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Tikka Roll" data-price="129">+</button>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <h3 class="text-xl font-semibold mb-4">Maggi</h3>
+                    <div class="grid gap-4">
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Plain Maggi - ₹79</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Plain Maggi" data-price="79">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Plain Maggi" data-price="79">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Soup Maggi - ₹79</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Soup Maggi" data-price="79">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Soup Maggi" data-price="79">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Cheese Maggi - ₹89</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Cheese Maggi" data-price="89">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Cheese Maggi" data-price="89">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Vegetable Maggi - ₹89</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Vegetable Maggi" data-price="89">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Vegetable Maggi" data-price="89">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Shezwan Maggi - ₹89</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Shezwan Maggi" data-price="89">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Shezwan Maggi" data-price="89">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Paneer Maggi - ₹99</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Maggi" data-price="99">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Maggi" data-price="99">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h3 class="text-xl font-semibold mb-4">Momos (10 Pieces)</h3>
+                    <div class="grid gap-4">
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Veg Momo Steam - ₹69</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Veg Momo Steam" data-price="69">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Veg Momo Steam" data-price="69">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Veg Momo Fry - ₹79</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Veg Momo Fry" data-price="79">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Veg Momo Fry" data-price="79">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Paneer Momo Steam - ₹89</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Momo Steam" data-price="89">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Momo Steam" data-price="89">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Paneer Momo Fry - ₹99</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Momo Fry" data-price="99">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Momo Fry" data-price="99">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Kurkure Momo - ₹99</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Kurkure Momo" data-price="99">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Kurkure Momo" data-price="99">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Chilli Momo - ₹99</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Chilli Momo" data-price="99">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Chilli Momo" data-price="99">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h3 class="text-xl font-semibold mb-4">Burger and Fries</h3>
+                    <div class="grid gap-4">
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Veg Burger - ₹79</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Veg Burger" data-price="79">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Veg Burger" data-price="79">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Paneer Burger - ₹89</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Burger" data-price="89">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Burger" data-price="89">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Cheese Burger - ₹89</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Cheese Burger" data-price="89">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Cheese Burger" data-price="89">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Salty Fries - ₹69</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Salty Fries" data-price="69">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Salty Fries" data-price="69">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Peri-Peri Fries - ₹79</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Peri-Peri Fries" data-price="79">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Peri-Peri Fries" data-price="79">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Cheese Loaded Fries - ₹89</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Cheese Loaded Fries" data-price="89">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Cheese Loaded Fries" data-price="89">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h3 class="text-xl font-semibold mb-4">Noodles</h3>
+                    <div class="grid gap-4">
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Vegetable Noodles - ₹129</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Vegetable Noodles" data-price="129">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Vegetable Noodles" data-price="129">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Hakka Noodles - ₹139</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Hakka Noodles" data-price="139">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Hakka Noodles" data-price="139">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Paneer Noodles - ₹149</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Noodles" data-price="149">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Noodles" data-price="149">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Singapuri Noodles - ₹149</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Singapuri Noodles" data-price="149">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Singapuri Noodles" data-price="149">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h3 class="text-xl font-semibold mb-4">Sandwich (Jumbo Slice)</h3>
+                    <div class="grid gap-4">
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Vegetable Sandwich - ₹79</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Vegetable Sandwich" data-price="79">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Vegetable Sandwich" data-price="79">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Cheese Sandwich - ₹99</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Cheese Sandwich" data-price="99">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Cheese Sandwich" data-price="99">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Paneer Sandwich - ₹109</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Sandwich" data-price="109">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Sandwich" data-price="109">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Veg Paneer Cheese Sandwich - ₹129</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Veg Paneer Cheese Sandwich" data-price="129">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Veg Paneer Cheese Sandwich" data-price="129">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h3 class="text-xl font-semibold mb-4">Starters</h3>
+                    <div class="grid gap-4">
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Vada Pav - ₹59</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Vada Pav" data-price="59">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Vada Pav" data-price="59">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Pav Bhaji - ₹99</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Pav Bhaji" data-price="99">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Pav Bhaji" data-price="99">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Veg Manchurian Dry - ₹139</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Veg Manchurian Dry" data-price="139">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Veg Manchurian Dry" data-price="139">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Veg Manchurian Gravy - ₹149</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Veg Manchurian Gravy" data-price="149">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Veg Manchurian Gravy" data-price="149">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h3 class="text-xl font-semibold mb-4">Rice</h3>
+                    <div class="grid gap-4">
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Veg Fried Rice - ₹129</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Veg Fried Rice" data-price="129">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Veg Fried Rice" data-price="129">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Chilli Garlic Rice - ₹139</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Chilli Garlic Rice" data-price="139">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Chilli Garlic Rice" data-price="139">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h3 class="text-xl font-semibold mb-4">Pizza</h3>
+                    <div class="grid gap-4">
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Veg Pizza - ₹119</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Veg Pizza" data-price="119">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Veg Pizza" data-price="119">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Margherita Pizza - ₹129</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Margherita Pizza" data-price="129">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Margherita Pizza" data-price="129">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Cheese Corn Pizza - ₹129</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Cheese Corn Pizza" data-price="129">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Cheese Corn Pizza" data-price="129">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Golden Corn Pizza - ₹129</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Golden Corn Pizza" data-price="129">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Golden Corn Pizza" data-price="129">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Onion and Tomato Pizza - ₹139</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Onion and Tomato Pizza" data-price="139">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Onion and Tomato Pizza" data-price="139">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h3 class="text-xl font-semibold mb-4">Italian</h3>
+                    <div class="grid gap-4">
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Garlic Bread - ₹69</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Garlic Bread" data-price="69">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Garlic Bread" data-price="69">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Cheese Garlic Bread - ₹89</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Cheese Garlic Bread" data-price="89">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Cheese Garlic Bread" data-price="89">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>White Sauce Pasta - ₹139</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="White Sauce Pasta" data-price="139">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="White Sauce Pasta" data-price="139">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Red Sauce Pasta - ₹139</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Red Sauce Pasta" data-price="139">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Red Sauce Pasta" data-price="139">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h3 class="text-xl font-semibold mb-4">Roti</h3>
+                    <div class="grid gap-4">
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Tawa Roti - ₹15</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Tawa Roti" data-price="15">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Tawa Roti" data-price="15">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Butter Roti - ₹20</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Butter Roti" data-price="20">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Butter Roti" data-price="20">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Lachcha Paratha - ₹35</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Lachcha Paratha" data-price="35">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Lachcha Paratha" data-price="35">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h3 class="text-xl font-semibold mb-4">Combos</h3>
+                    <div class="grid gap-4">
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Veg Manchurian + Rice - ₹129</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Veg Manchurian + Rice" data-price="129">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Veg Manchurian + Rice" data-price="129">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Veg Manchurian + Noodle - ₹129</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Veg Manchurian + Noodle" data-price="129">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Veg Manchurian + Noodle" data-price="129">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Paneer Chilli + Rice - ₹129</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Chilli + Rice" data-price="129">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Chilli + Rice" data-price="129">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Paneer Chilli + Noodle - ₹129</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Chilli + Noodle" data-price="129">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Chilli + Noodle" data-price="129">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h3 class="text-xl font-semibold mb-4">Main Course</h3>
+                    <div class="grid gap-4">
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Matar Aloo - ₹189</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Matar Aloo" data-price="189">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Matar Aloo" data-price="189">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Shahi Paneer - ₹189</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Shahi Paneer" data-price="189">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Shahi Paneer" data-price="189">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Aloo Gobhi - ₹189</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Aloo Gobhi" data-price="189">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Aloo Gobhi" data-price="189">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Aloo Jira - ₹189</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Aloo Jira" data-price="189">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Aloo Jira" data-price="189">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Paneer Bhujiya - ₹189</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Bhujiya" data-price="189">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Bhujiya" data-price="189">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Matar Paneer - ₹199</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Matar Paneer" data-price="199">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Matar Paneer" data-price="199">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Mix Veg - ₹199</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Mix Veg" data-price="199">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Mix Veg" data-price="199">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Paneer Butter Masala - ₹219</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Butter Masala" data-price="219">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Butter Masala" data-price="219">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Kadhai Paneer - ₹219</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Kadhai Paneer" data-price="219">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Kadhai Paneer" data-price="219">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Paneer Do Pyaza - ₹209</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Do Pyaza" data-price="209">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Do Pyaza" data-price="209">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h3 class="text-xl font-semibold mb-4">Dal</h3>
+                    <div class="grid gap-4">
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Plain Dal - ₹109</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Plain Dal" data-price="109">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Plain Dal" data-price="109">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Dal Jira - ₹119</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Dal Jira" data-price="119">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Dal Jira" data-price="119">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Dal Fry - ₹129</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Dal Fry" data-price="129">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Dal Fry" data-price="129">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Dal Makhani - ₹159</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Dal Makhani" data-price="159">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Dal Makhani" data-price="159">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Banarasiya Dal Special - ₹169</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Banarasiya Dal Special" data-price="169">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Banarasiya Dal Special" data-price="169">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <h3 class="text-xl font-semibold mb-4">Rice</h3>
+                    <div class="grid gap-4">
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Plain Rice - ₹129</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Plain Rice" data-price="129">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Plain Rice" data-price="129">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Veg Pulaw - ₹149</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Veg Pulaw" data-price="149">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Veg Pulaw" data-price="149">+</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow">
+                            <span>Paneer Pulaw - ₹189</span>
+                            <div class="flex items-center">
+                                <button class="minus-btn bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 active:bg-red-700 active:scale-95 transition transform mr-2" data-name="Paneer Pulaw" data-price="189">-</button>
+                                <button class="add-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 active:bg-green-700 active:scale-95 transition transform" data-name="Paneer Pulaw" data-price="189">+</button>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg">
+            <button id="toggle-summary" class="w-full bg-blue-500 text-white py-2 hover:bg-blue-600">
+                Show Order Summary
+            </button>
+            <div id="order-summary" class="hidden p-4">
+                <h3 class="text-xl font-semibold mb-4">Order Summary</h3>
+                <ul id="order-list" class="space-y-2 bg-gray-50 p-4 rounded-lg shadow hidden"></ul>
+                <div class="flex justify-between mt-4 text-lg font-semibold">
+                    <span>Total:</span>
+                    <button id="submit-order" class="w-1/2 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Place Order</button>
+                    <span>₹<span id="total-price">0</span></span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
